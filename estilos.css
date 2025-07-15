@@ -1,61 +1,62 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #e0f7fa;
-  color: #004d40;
+  background-color: #f0f7f7;
+  color: #2d3e3e;
   margin: 0;
   padding: 20px;
-  overflow-x: auto;
 }
 
 h1 {
   text-align: center;
-  color: #006064;
+  color: #2f4f4f;
   margin-bottom: 40px;
 }
 
 #malla {
   display: flex;
-  flex-direction: row;
-  gap: 30px;
-  justify-content: flex-start;
-  align-items: flex-start;
-  overflow-x: auto;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .nivel {
-  min-width: 250px;
-  background-color: #b2ebf2;
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 10px;
 }
 
 .nivel h2 {
+  background-color: #82b8b8;
+  color: white;
+  padding: 15px;
+  min-width: 150px;
   text-align: center;
-  color: #004d40;
-  margin-bottom: 15px;
-  font-size: 1.1em;
+  border-radius: 8px;
+  margin: 0;
+  font-size: 1rem;
 }
 
 .fila {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .ramo {
-  background-color: #4dd0e1;
-  border: 2px solid #00acc1;
-  color: #00363a;
+  background-color: #a5cfcf;
+  border: 2px solid #6b9d9d;
+  color: #1f2d2d;
   padding: 10px;
   border-radius: 6px;
   cursor: pointer;
   opacity: 0.5;
   pointer-events: none;
   transition: 0.2s;
-  text-align: center;
   font-size: 0.9em;
+  max-width: 250px;
+  text-align: center;
 }
 
 .ramo.activo {
@@ -64,8 +65,8 @@ h1 {
 }
 
 .ramo.aprobado {
-  background-color: #80deea;
-  border-color: #0097a7;
+  background-color: #cbe5e5;
+  border-color: #4a6c6c;
   text-decoration: line-through;
   color: #666;
 }
@@ -73,3 +74,4 @@ h1 {
 .ramo:hover {
   transform: scale(1.03);
 }
+

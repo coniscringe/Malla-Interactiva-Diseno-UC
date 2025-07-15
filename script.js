@@ -1,43 +1,65 @@
 const ramos = [
-  { nombre: "Taller de Introducción al Proyectonde Diseño", id: "taller_intro", requisitos: [], abre: ["taller_ideacion"] },
-  { nombre: "Técnicas de Representación", id: "tecnicas_repr", requisitos: [], abre: ["percepcion"] },
-  { nombre: "Introducción a la Investigación en Diseño", id: "intro_investigacion", requisitos: [], abre: ["investigacion_diseno"] },
-  { nombre: "Historias del Diseño y sus contextos Históricos", id: "historias" },
-  { nombre: "Taller de Ideación y Formalización para el Diseño", id: "taller_ideacion", requisitos: ["taller_intro"], abre: ["taller_problematizacion"] },
-  { nombre: "Percepción y Composición", id: "percepcion", requisitos: ["tecnicas_repr"] },
-  { nombre: "Diseño, Tecnología y Sociedad", id: "dts" },
-  { nombre: "Filosofía", id: "filosofia" },
-  { nombre: "Taller de Problematización y Conceptualización para el Diseño", id: "taller_problematizacion", requisitos: ["taller_ideacion"], abre: ["taller_integral"] },
-  { nombre: "Laboratorio de Experimentación y Prototipado", id: "lab" },
-  { nombre: "Investigación para el Diseño", id: "investigacion_diseno", requisitos: ["intro_investigacion"], abre: ["investigacion_avanzada"] },
-  { nombre: "Taller de Diseño Integral", id: "taller_integral", requisitos: ["taller_problematizacion"], abre: ["taller_estrategico"] },
-  { nombre: "Materiales y Procesos", id: "materiales" },
-  { nombre: "Teoría y Crítica Contemporánea de la Cultura del Diseño", id: "teoria" },
-  { nombre: "Taller de Diseño Estratégico", id: "taller_estrategico", requisitos: ["taller_integral"], abre: ["taller_innovacion"] },
-  { nombre: "Formulación de Proyectos de Diseño", id: "formulacion" },
-  { nombre: "Investigación a través del Diseño", id: "investigacion_avanzada", requisitos: ["investigacion_diseno"] },
-  { nombre: "Taller de Diseño para la Innovación", id: "taller_innovacion", requisitos: ["taller_estrategico"], abre: ["taller_futuros"] },
-  { nombre: "Diseño Crítico", id: "critico" },
-  { nombre: "Pensamiento Computacional", id: "computacional" },
-  { nombre: "Taller de Diseño para Escenarios Futuros", id: "taller_futuros", requisitos: ["taller_innovacion"], abre: ["taller_integracion"] },
-  { nombre: "Diseño de Intangibles y Sistemas", id: "intangibles" },
-  { nombre: "Diseño para el Desarrollo Sostenible", id: "sostenible" },
-  { nombre: "Taller de Integración Interdisciplinar", id: "taller_integracion", requisitos: ["taller_futuros"], abre: ["seminario"] },
-  { nombre: "Ética del Diseño", id: "etica", abre: ["practica_oficina"] },
-  { nombre: "Seminario de Título", id: "seminario", requisitos: ["taller_integracion"], abre: ["proyecto"] },
-  { nombre: "Práctica Profesional de Oficina", id: "practica_oficina", requisitos: ["etica"], abre: ["practica_servicio"] },
-  { nombre: "Proyecto de Título", id: "proyecto", requisitos: ["seminario"] },
-  { nombre: "Práctica Profesional de Servicio", id: "practica_servicio", requisitos: ["practica_oficina"] },
+  // Primer Año
+  { nombre: "Taller de Introducción al Proyecto de Diseño", id: "taller_intro", requisitos: [], nivel: 1 },
+  { nombre: "Técnicas de Representación", id: "tecnicas_repr", requisitos: [], nivel: 1 },
+  { nombre: "Introducción a la Investigación en Diseño", id: "intro_inv_diseno", requisitos: [], nivel: 1 },
+  { nombre: "Historias del Diseño y sus contextos Históricos", id: "historias", requisitos: [], nivel: 1 },
+
+  { nombre: "Taller de Ideación y Formalización para el Diseño", id: "taller_ideacion", requisitos: ["taller_intro"], nivel: 2 },
+  { nombre: "Percepción y Composición", id: "percepcion", requisitos: ["tecnicas_repr"], nivel: 2 },
+  { nombre: "Diseño, Tecnología y Sociedad", id: "dts", requisitos: [], nivel: 2 },
+  { nombre: "Filosofía", id: "filosofia", requisitos: [], nivel: 2 },
+
+  // Segundo Año
+  { nombre: "Taller de Problematización y Conceptualización para el Diseño", id: "taller_problemas", requisitos: ["taller_ideacion"], nivel: 3 },
+  { nombre: "Laboratorio de Experimentación y Prototipado", id: "lab", requisitos: [], nivel: 3 },
+  { nombre: "Investigación para el Diseño", id: "investigacion_diseno", requisitos: ["intro_inv_diseno"], nivel: 3 },
+
+  { nombre: "Taller de Diseño Integral", id: "taller_integral", requisitos: ["taller_problemas"], nivel: 4 },
+  { nombre: "Materiales y Procesos", id: "materiales", requisitos: [], nivel: 4 },
+  { nombre: "Teoría y Crítica Contemporánea de la Cultura del Diseño", id: "teoria", requisitos: [], nivel: 4 },
+
+  // Tercer Año
+  { nombre: "Taller de Diseño Estratégico", id: "taller_estrategico", requisitos: ["taller_integral"], nivel: 5 },
+  { nombre: "Formulación de Proyectos de Diseño", id: "formulacion", requisitos: [], nivel: 5 },
+  { nombre: "Investigación a través del Diseño", id: "inv_avanzada", requisitos: ["investigacion_diseno"], nivel: 5 },
+
+  { nombre: "Taller de Diseño para la Innovación", id: "taller_innovacion", requisitos: ["taller_estrategico"], nivel: 6 },
+  { nombre: "Diseño Crítico", id: "critico", requisitos: [], nivel: 6 },
+  { nombre: "Pensamiento Computacional", id: "computacional", requisitos: [], nivel: 6 },
+
+  // Cuarto Año
+  { nombre: "Taller de Diseño para Escenarios Futuros", id: "taller_futuros", requisitos: ["taller_innovacion"], nivel: 7 },
+  { nombre: "Diseño de Intangibles y Sistemas", id: "intangibles", requisitos: [], nivel: 7 },
+  { nombre: "Diseño para el Desarrollo Sostenible", id: "sostenible", requisitos: [], nivel: 7 },
+
+  { nombre: "Taller de Integración Interdisciplinar", id: "taller_integracion", requisitos: ["taller_futuros"], nivel: 8 },
+  { nombre: "Ética del Diseño", id: "etica", requisitos: [], nivel: 8 },
+
+  // Quinto Año
+  { nombre: "Seminario de Título", id: "seminario", requisitos: ["taller_integracion"], nivel: 9 },
+  { nombre: "Práctica Profesional de Oficina", id: "practica_oficina", requisitos: ["etica"], nivel: 9 },
+
+  { nombre: "Proyecto de Título", id: "proyecto", requisitos: ["seminario"], nivel: 10 },
+  { nombre: "Práctica Profesional de Servicio", id: "practica_servicio", requisitos: ["practica_oficina"], nivel: 10 },
 ];
 
 const malla = document.getElementById("malla");
 const estado = {};
+const niveles = [...new Set(ramos.map(r => r.nivel))];
+
+niveles.forEach(nivel => {
+  const contenedor = document.createElement("div");
+  contenedor.classList.add("nivel");
+  contenedor.innerHTML = `<h2>Nivel ${nivel}</h2><div class="fila" id="nivel-${nivel}"></div>`;
+  malla.appendChild(contenedor);
+});
 
 function crearRamo(ramo) {
   const div = document.createElement("div");
   div.classList.add("ramo");
   div.id = ramo.id;
-  div.innerHTML = `${ramo.nombre}<div class="estado"></div>`;
+  div.innerText = ramo.nombre;
 
   if (!ramo.requisitos || ramo.requisitos.length === 0) {
     div.classList.add("activo");
@@ -50,7 +72,7 @@ function crearRamo(ramo) {
     activarRamos();
   });
 
-  malla.appendChild(div);
+  document.getElementById(`nivel-${ramo.nivel}`).appendChild(div);
 }
 
 function activarRamos() {
@@ -66,5 +88,3 @@ function activarRamos() {
 
 ramos.forEach(crearRamo);
 activarRamos();
-
-

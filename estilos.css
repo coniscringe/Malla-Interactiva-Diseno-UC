@@ -15,23 +15,24 @@ h1 {
 #malla {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
 .nivel {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 15px;
+  gap: 10px;
   padding: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .nivel h2 {
   background-color: #82b8b8;
   color: white;
-  padding: 15px;
-  min-width: 150px;
-  text-align: center;
+  padding: 12px 16px;
   border-radius: 8px;
   margin: 0;
   font-size: 1rem;
@@ -74,4 +75,3 @@ h1 {
 .ramo:hover {
   transform: scale(1.03);
 }
-

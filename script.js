@@ -48,10 +48,23 @@ const malla = document.getElementById("malla");
 const estado = {};
 const niveles = [...new Set(ramos.map(r => r.nivel))];
 
+const nombresSemestres = {
+  1: "Semestre I",
+  2: "Semestre II",
+  3: "Semestre III",
+  4: "Semestre IV",
+  5: "Semestre V",
+  6: "Semestre VI",
+  7: "Semestre VII",
+  8: "Semestre VIII",
+  9: "Semestre IX",
+  10: "Semestre X",
+};
+
 niveles.forEach(nivel => {
   const contenedor = document.createElement("div");
   contenedor.classList.add("nivel");
-  contenedor.innerHTML = `<h2>Nivel ${nivel}</h2><div class="fila" id="nivel-${nivel}"></div>`;
+  contenedor.innerHTML = `<h2>${nombresSemestres[nivel]}</h2><div class="fila" id="nivel-${nivel}"></div>`;
   malla.appendChild(contenedor);
 });
 
@@ -88,3 +101,4 @@ function activarRamos() {
 
 ramos.forEach(crearRamo);
 activarRamos();
+
